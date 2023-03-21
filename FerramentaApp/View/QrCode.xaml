@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI"
+             xmlns:local="clr-namespace:FerramentaApp;assembly=FerramentaApp"
+             x:Class="FerramentaApp.View.QrCode"
+             Title="Novo QrCode"
+             BackgroundColor="WhiteSmoke">
+
+    <ScrollView>
+        <StackLayout Margin="15,25,15,0" Spacing="25" Padding="0">
+            <Frame CornerRadius="5" 
+               BorderColor="Black" 
+               HasShadow="True" 
+               Padding="0">
+
+                <Entry x:Name="EntryTitulo"
+                   Placeholder="Título"
+                   TextColor="Black"
+                   BackgroundColor="White"
+                   HeightRequest="50"/>
+            </Frame>
+
+            <Frame CornerRadius="5" 
+               BorderColor="Black" 
+               HasShadow="True" 
+               Padding="0">
+
+                <Entry x:Name="EntryLink"
+                   Placeholder="Insira o link para gerar o QrCode."
+                   TextColor="Black"
+                   BackgroundColor="White"
+                   HeightRequest="50"/>
+            </Frame>
+
+            <Button Text="Gerar QrCode"
+                HorizontalOptions="Center"
+                BackgroundColor="#512BD4"
+                TextColor="White"
+                Clicked="OnClickGerarLink"/>
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <StackLayout x:Name="StkQr" IsVisible="false">
+                    <zxing:BarcodeGeneratorView HeightRequest="300"
+                                            WidthRequest="300"
+                                            ForegroundColor="Black"
+                                            Format="QrCode"
+                                            x:Name="QrDescricao"/>
+                </StackLayout>
+
+                <Label x:Name="LblDesc"
+                   FontSize="15"
+                   TextColor="#512BD4"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   Padding="10"/>
+            </StackLayout>
+
+            <Label HorizontalOptions="Start"
+               VerticalOptions="End"
+               Text="*Faça um print da tela para salvar o QrCode."
+               Margin="5,0,0,10"
+               FontSize="Micro"
+               TextColor="#512BD4"
+               FontAttributes="Bold"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FerramentaApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FerramentaApp.View"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.BackgroundColor="#512BD4">
+
+    <TabBar>
+        <Tab Title="Início">
+            <ShellContent Title="Tela Inicial"
+                          ContentTemplate="{DataTemplate local:TelaInicial}"
+                          Route="Tela Inicial" />
+        </Tab>
+
+       <!-- <Tab Title="Sobre">
+            <ShellContent Title="Sobre"
+                          ContentTemplate="{DataTemplate local:Sobre}"
+                          Route="Sobre" />
+        </Tab>-->
+    </TabBar>
+</Shell>

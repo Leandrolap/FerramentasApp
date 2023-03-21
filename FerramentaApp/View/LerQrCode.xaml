@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI"
+             x:Class="FerramentaApp.View.LerQrCode"
+             Title="Leitura do QrCode"
+             BackgroundColor="WhiteSmoke">
+    
+    <Grid Padding="0">
+        <zxing:CameraBarcodeReaderView x:Name="cameraBarcodeReaderView"
+                                       BarcodesDetected="BarcodesDetected"
+                                       IsDetecting="True"
+                                       IsTorchOn="False"/>
+
+        <Frame x:Name="FPopup"
+               BackgroundColor="White" 
+               CornerRadius="5" 
+               VerticalOptions="EndAndExpand" 
+               IsVisible="False">
+            
+            <StackLayout>
+                <Label x:Name="DescQr"
+                       FontSize="15"
+                       TextColor="Black"
+                       HorizontalOptions="Center"/>
+
+                <Button Text="ABRIR"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Center"
+                        Clicked="OnClickAbrir"
+                        TextColor="#512BD4"
+                        HeightRequest="80"
+                        FontAttributes="Bold"
+                        />
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>
